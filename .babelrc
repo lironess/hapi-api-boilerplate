@@ -1,0 +1,14 @@
+{
+  "presets": ["stage-3"],
+    "plugins": [
+    "transform-es2015-modules-commonjs",
+    ["module-resolver", {
+      "root": ["./src", "./tests"],
+      "alias": {
+        "test": "./test"
+      }
+    }]
+  ],
+  "sourceMaps": true,
+  "retainLines": true
+}
