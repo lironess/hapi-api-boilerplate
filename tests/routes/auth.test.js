@@ -1,4 +1,3 @@
-import { mocks } from 'utils';
 import request from 'supertest';
 import { Model } from 'sequelize';
 import { verify } from 'jsonwebtoken';
@@ -6,7 +5,6 @@ import isUndefined from 'lodash/fp/isUndefined';
 
 jest.mock('sequelize');
 jest.mock('jsonwebtoken');
-jest.doMock('config/db', mocks.hapiPlugin);
 const { getServer } = require('config/server'); // require instead of import becaose of babel-plugin-jest-hoist
 
 describe('Routes - Auth', () => {

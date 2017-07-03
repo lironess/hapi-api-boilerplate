@@ -1,8 +1,8 @@
 import request from 'supertest';
 import { verify } from 'jsonwebtoken';
-import { getServer } from 'config/server';
 
 jest.mock('jsonwebtoken');
+const { getServer } = require('config/server'); // require instead of import becaose of babel-plugin-jest-hoist
 
 describe('Routes - User', () => {
   let server;

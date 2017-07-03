@@ -1,5 +1,9 @@
 import chai from 'chai';
 
+import { mocks } from 'utils';
+
+jest.doMock('config/db', mocks.hapiPlugin);
+
 // Make sure chai and jasmine ".not" play nice together
 const originalNot = Object.getOwnPropertyDescriptor(chai.Assertion.prototype, 'not').get;
 Object.defineProperty(chai.Assertion.prototype, 'not', {
