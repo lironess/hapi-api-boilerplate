@@ -4,6 +4,8 @@ import { mocks } from 'utils';
 
 jest.doMock('config/db', mocks.hapiPlugin);
 
+chai.config.truncateThreshold = 0;
+
 // Make sure chai and jasmine ".not" play nice together
 const originalNot = Object.getOwnPropertyDescriptor(chai.Assertion.prototype, 'not').get;
 Object.defineProperty(chai.Assertion.prototype, 'not', {
